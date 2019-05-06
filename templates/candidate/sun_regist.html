@@ -1,0 +1,34 @@
+<div class="form-container container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="form__section-title">Update Action Form</h1>
+        </div>
+        <div class="col-md-12">
+            <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            {% for user_form in user_form %}
+                <div class="form-group row">
+                    <label class="form-label col-md-3" for="id_description">user_form</label>
+                    <div class="col-md-9">
+                        <input type="text" name="description"
+                               value="Folded washing" maxlength="255"
+                               class="form-control form-control-sm"
+                               placeholder="Description" title="" required=""
+                               id="id_description">
+                    </div>
+                </div>
+                {% endfor %}
+                {{ profile_form.as_p }}
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="form-group">
+                            <button type="submit"
+                                    class="form-button btn btn-success">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
